@@ -1,0 +1,6 @@
+{
+	"name": "VanArsdelSQLVM",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

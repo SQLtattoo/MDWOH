@@ -1,0 +1,27 @@
+{
+	"name": "0002vanarsdel_onlinemoviemappings",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "datalakemdwoh",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@CONCAT(pipeline().RunId, '-OnlineMovieMappings.txt')",
+					"type": "Expression"
+				},
+				"folderPath": "fromonprem",
+				"fileSystem": "0002vanarsdel"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

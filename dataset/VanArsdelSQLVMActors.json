@@ -1,0 +1,30 @@
+{
+	"name": "VanArsdelSQLVMActors",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "VanArsdelVM",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "ActorID",
+				"type": "uniqueidentifier"
+			},
+			{
+				"name": "ActorName",
+				"type": "varchar"
+			},
+			{
+				"name": "Gender",
+				"type": "char"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Actors"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

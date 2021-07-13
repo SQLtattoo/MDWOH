@@ -1,0 +1,6 @@
+{
+	"name": "ForthCoffeeVM",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

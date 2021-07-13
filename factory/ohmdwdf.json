@@ -1,0 +1,9 @@
+{
+	"name": "ohmdwdf",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ad614330-7bf4-488e-b5b9-5231980a6ba0",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}
