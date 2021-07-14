@@ -137,7 +137,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@CONCAT(pipeline().RunId, '-actors.txt')",
+							"value": "Actors.csv",
 							"type": "Expression"
 						},
 						"folderPath": "fromonprem",
@@ -169,7 +169,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@CONCAT(pipeline().RunId, '-customers.txt')",
+							"value": "Customers.csv",
 							"type": "Expression"
 						},
 						"folderPath": "fromonprem",
@@ -201,7 +201,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@CONCAT(pipeline().RunId, '-movieactors.txt')",
+							"value": "MovieActors.csv",
 							"type": "Expression"
 						},
 						"folderPath": "fromonprem",
@@ -233,7 +233,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@CONCAT(pipeline().RunId, '-movies.txt')",
+							"value": "Movies.csv",
 							"type": "Expression"
 						},
 						"folderPath": "fromonprem",
@@ -265,7 +265,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@CONCAT(pipeline().RunId, '-OnlineMovieMappings.txt')",
+							"value": "OnlineMovieMappings.csv",
 							"type": "Expression"
 						},
 						"folderPath": "fromonprem",
@@ -297,7 +297,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@CONCAT(pipeline().RunId, '-transactions.txt')",
+							"value": "Transactions.csv",
 							"type": "Expression"
 						},
 						"folderPath": "fromonprem",
