@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@CONCAT(pipeline().RunId, '-actors.txt')",
+					"value": "Actors.csv",
 					"type": "Expression"
 				},
 				"folderPath": "fromonprem",
