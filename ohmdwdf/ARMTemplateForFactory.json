@@ -295,7 +295,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ForthCoffee_pipeline')]",
+			"name": "[concat(parameters('factoryName'), '/ForthCoffeeFilesVM_pipeline')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
