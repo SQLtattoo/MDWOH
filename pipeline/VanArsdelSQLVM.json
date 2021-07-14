@@ -1,5 +1,5 @@
 {
-	"name": "VanArsdelSQLVM_pipeline",
+	"name": "VanArsdelSQLVM",
 	"properties": {
 		"description": "mdw oh",
 		"activities": [
