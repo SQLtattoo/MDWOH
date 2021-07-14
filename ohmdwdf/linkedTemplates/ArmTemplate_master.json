@@ -1,0 +1,125 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ohmdwdf"
+		},
+		"0001ForthCoffee_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of '0001ForthCoffee'"
+		},
+		"CloudSales_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CloudSales'"
+		},
+		"CloudStreaming_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'CloudStreaming'"
+		},
+		"VanArsdelVM_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'VanArsdelVM'"
+		},
+		"datalakemdwoh_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'datalakemdwoh'"
+		},
+		"southridgecatalogcosmosdb_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'southridgecatalogcosmosdb'"
+		},
+		"0001ForthCoffee_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\Rentals"
+		},
+		"0001ForthCoffee_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "southridge"
+		},
+		"datalakemdwoh_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://samdwoh.dfs.core.windows.net"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ohmdwdf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"CloudSales_connectionString": {
+						"value": "[parameters('CloudSales_connectionString')]"
+					},
+					"CloudStreaming_connectionString": {
+						"value": "[parameters('CloudStreaming_connectionString')]"
+					},
+					"datalakemdwoh_accountKey": {
+						"value": "[parameters('datalakemdwoh_accountKey')]"
+					},
+					"southridgecatalogcosmosdb_connectionString": {
+						"value": "[parameters('southridgecatalogcosmosdb_connectionString')]"
+					},
+					"0001ForthCoffee_password": {
+						"value": "[parameters('0001ForthCoffee_password')]"
+					},
+					"datalakemdwoh_properties_typeProperties_url": {
+						"value": "[parameters('datalakemdwoh_properties_typeProperties_url')]"
+					},
+					"0001ForthCoffee_properties_typeProperties_host": {
+						"value": "[parameters('0001ForthCoffee_properties_typeProperties_host')]"
+					},
+					"0001ForthCoffee_properties_typeProperties_userId": {
+						"value": "[parameters('0001ForthCoffee_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ohmdwdf_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"VanArsdelVM_connectionString": {
+						"value": "[parameters('VanArsdelVM_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ohmdwdf_ArmTemplate_0')]"
+			]
+		}
+	]
+}
